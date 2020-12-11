@@ -1,10 +1,5 @@
-workflows:
-  version: 2
-  filters:
-    branches:
-      only:
-        - CI_test
-    
+version: 2
+  
 
 defaults: &defaults
   working_directory: ~/repo
@@ -14,6 +9,9 @@ defaults: &defaults
 jobs:
   install:
     <<: *defaults
+    filters:
+      branches:
+        only: CI_test
     steps:
       - checkout
       - restore_cache:
