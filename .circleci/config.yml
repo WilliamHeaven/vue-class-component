@@ -1,4 +1,10 @@
-version: 2
+workflows:
+  version: 2
+  filters:
+    branches:
+      only:
+        - CI_test
+    
 
 defaults: &defaults
   working_directory: ~/repo
